@@ -1,0 +1,10 @@
+Spring boot
+Microservice
+Eureka registry
+API Gateway
+Hystix dashboard
+Zipkin Server
+Sleuth
+
+#Zipkin
+http://127.0.0.1:9411/

@@ -1,0 +1,16 @@
+//1. New Record Insert
+//URL = http://localhost:8004/users/saveuser
+//Method = POST
+//Request = 
+{
+"name":"name 1",
+"email":"email 1",
+"prodId":2
+}
+
+//2. Get user by userId
+//URL = http://localhost:8004/users/getuser/{id}
+//Method = GET
+//Request = pathvariable
+
+

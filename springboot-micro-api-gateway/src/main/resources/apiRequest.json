@@ -1,0 +1,34 @@
+//1. New Record Insert
+//URL = http://localhost:8001/products/saveproduct
+//Method = POST
+//Request = 
+{
+"prodName":"prod name 2",
+"prodDescription":"prod desc 2",
+"prodCode":"prod code 2"
+}
+
+//2. Get user by prodId
+//URL = http://localhost:8001/products/findProd/{id}
+//Method = GET
+//Request = pathvariable
+
+
+//3. New Record Insert
+//URL = http://localhost:8001/users/saveuser
+//Method = POST
+//Request = 
+{
+"name":"name 1",
+"email":"email 1",
+"prodId":2
+}
+
+//4. Get user by userId
+//URL = http://localhost:8001/users/getuser/{id}
+//Method = GET
+//Request = pathvariable
+
+
+//5. actuator
+//URL = http://localhost:8001/actuator/hystrix.stream

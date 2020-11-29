@@ -1,0 +1,16 @@
+//1. New Record Insert
+//URL = http://localhost:8003/products/saveproduct
+//Method = POST
+//Request = 
+{
+"prodName":"prod name 2",
+"prodDescription":"prod desc 2",
+"prodCode":"prod code 2"
+}
+
+//2. Get user by prodId
+//URL = http://localhost:8003/products/findProd/{id}
+//Method = GET
+//Request = pathvariable
+
+

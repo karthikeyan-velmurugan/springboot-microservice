@@ -1,0 +1,59 @@
+
+server:
+  port: 8001
+  
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:       
+      - id: PRODUCT-SERVICE-ID
+        uri: lb://PRODUCT-SERVICE
+        predicates:
+        - Path=/products/**
+        filters:
+         - name: CircuitBreaker
+           args:
+             name: USER-SERVICE
+             fallbackUri: forward:/productservicefallback
+      - id: USER-SERVICE-ID
+        uri: lb://USER-SERVICE
+        predicates:
+        - Path=/users/**
+        filters:
+        - name: CircuitBreaker
+          args:
+            name: USER-SERVICE
+            fallbackUri: forward:/userservicefallback   
+
+hystrix:
+   command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
+     
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+  endpoints:
+    jmx:
+      exposure:
+        include: "*"
+    web:
+      exposure:
+          include: hystrix.stream
+       # include: "*"
+      base-path: /actuator
+      cors:
+        allowed-origins: true
+            
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: hystrix.stream 
